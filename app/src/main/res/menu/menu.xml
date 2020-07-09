@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/import_excel"
+        android:title="@string/import_excel_sheet"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/add_single_word"
+        android:title="@string/add_word"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/manage_words"
+        android:title="@string/manage_words"
+        app:showAsAction="withText" />
+
+</menu>

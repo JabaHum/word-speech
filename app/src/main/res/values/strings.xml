@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Word To Speech</string>
+    <string name="import_excel_sheet">Import Excel Sheet (.xlsx)</string>
+    <string name="manage_words">Manage Words</string>
+    <string name="add_word">Add Single Word</string>
+    <string name="add_new_word">Add new word</string>
+    <string name="save">Save</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="loading"
+            type="Boolean" />
+
+        <variable
+            name="message"
+            type="String" />
+
+        <variable
+            name="vocabularies"
+            type="java.util.List&lt;com.wizlif.wordtospeech.persistence.Vocabulary>" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            vocabularies="@{ vocabularies }"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_vocabulary"
+            android:visibility="@{ (loading ?? false) ? View.GONE : View.VISIBLE }"
+            tools:visibility="gone"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{ (loading ?? false) ? View.VISIBLE : View.GONE }">
+            <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/pb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textAllCaps="true"
+                android:text="@{ message }"
+                tools:text="Loading"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
